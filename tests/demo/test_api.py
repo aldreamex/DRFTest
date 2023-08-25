@@ -44,6 +44,7 @@ def test_get_messages(client, user, message_factory):
     # assert data[0]['text'] == 'test'  # в базе данных лежит сообщение с текстом test
     for i, m in enumerate(data):    # данные от сервера равны данным в БД
         assert m['text'] == messages[i].text
+
 @pytest.mark.django_db
 def test_create_message(client, user):
     count = Message.objects.count() # количество сообщений в БД
